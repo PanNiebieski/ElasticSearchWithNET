@@ -1,0 +1,10 @@
+﻿exceptions.ClassName.keyword *BadHttpRequestException
+exceptions.ClassName.keyword *Null
+exceptions.Message: Dupa was null
+exceptions.Source: SerilogToElasticSearchAPI
+exceptions.StackTraceString *Error1 
+
+fields.RequestPath:/Index
+fields.RequestPath:/Index
+level:Information
+level:Error

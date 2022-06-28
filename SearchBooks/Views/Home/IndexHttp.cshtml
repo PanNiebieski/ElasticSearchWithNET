@@ -1,0 +1,39 @@
+﻿@using SearchPokemons;
+
+@model List<Pokemon>
+
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <input type="text" name="query" />
+    <input type="submit" value="Search" />
+</form>
+
+@if (Model.Any())
+{
+    <h3>Search Results</h3>
+    <ul>
+    @foreach (var pokemon  in Model)
+    {
+        
+
+        <li>
+            
+            # @pokemon.Id 
+            <br />
+            @pokemon.Name (HP: @pokemon.HP)
+            <ul>
+                <li>
+                    Type 1: @pokemon.Type1
+                </li>
+                @if (!string.IsNullOrWhiteSpace(pokemon.Type2))
+                {
+                    <li>
+                        Type 2: @pokemon.Type2
+                    </li>
+                }
+            </ul>
+        </li>
+     <br />   <br />
+    }
+    </ul>
+}
